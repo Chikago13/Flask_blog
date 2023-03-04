@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}
+Создание
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Добавлени</h1>
+    </div>
+    <form method="post" >
+        <input type="text" name="author" id="author" class="container form-control" placeholder="Введите автора"><br>
+        <textarea name="text" id="text" class="container form-control" placeholder="Введите основной текст"></textarea><br>
+        <textarea name="comment" id="comment" class="container form-control" placeholder="Введите коментарий"></textarea><br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <input type="submit" class="btn btn-suссess" value="Отправить">
+        </div>
+    </form>
+
+    <div class="container">
+        <h1>Информация</h1>
+        {% for el in forms %}
+        <div class="alert alert-info">
+            <h2>{{ el.author }}</h2>
+            <p>{{ el.text }}</p>
+            <p><b>Дата:{{ el.date.date() }}</b></p>
+            <button class="btn btn-warning">Детальние</button>
+        </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

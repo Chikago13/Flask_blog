@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}
+Обнавление статьи
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Обнавление статьи</h1>
+    </div>
+    <form method="post">
+        <input type="text" name="title" id="title" class="container form-control" value="{{ article.title }}" placeholder="Введите название"><br>
+        <input type="text" name="author" id="author" class="container form-control" placeholder="Введите автора">{{ article.author }}<br>
+        <textarea name="intro" id="intro" class="container form-control" placeholder="Введите анонс">{{ article.intro }}</textarea><br>
+        <textarea name="text" id="text" class="container form-control" placeholder="Введите основной текст">{{ article.text }}</textarea><br>
+        <textarea name="comment" id="comment" class="container form-control" placeholder="Введите коментарий">{{ article.comment }}</textarea><br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <input type="submit" class="btn btn-suссess" value="Обнавить">
+        </div>
+    </form>
+{% endblock %}
